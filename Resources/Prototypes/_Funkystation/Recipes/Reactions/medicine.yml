@@ -155,6 +155,16 @@
 
 # misc
 - type: reaction
+  id: Antihol
+  reactants:
+    Ethanol:
+      amount: 1
+    Charcoal:
+      amount: 1
+  products:
+    Antihol: 2
+
+- type: reaction
   id: Pielovene
   reactants:
     Silicon:
