@@ -1,0 +1,99 @@
+# 
+#
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  name: claidheamhmor
+  parent: [ BaseSword, BaseMajorContraband ]
+  id: ClaidheamhmorSword
+  description: An ancient two-handed war blade, re-made for modern crusader combat.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/claymore.rsi
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 3.0
+  - type: MeleeWeapon
+    attackRate: 0.75
+    damage:
+      types:
+        Slash: 15
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 20
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/claymore.rsi
+    slots:
+    - back
+  - type: DisarmMalus
+
+- type: entity
+  name: arming sword
+  parent: [ BaseSword, BaseMajorContraband ]
+  id: ArmingSword
+  description: An ancient one handed blade, commonly used as a sidearm. Expertly deadly in the right hands.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/claymore.rsi
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    attackRate: 1.0
+    damage:
+      types:
+        Slash: 18
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+# Make it so that you can activate the arming sword to switch to piercing damage
+#  - type: ItemToggleMeleeWeapon
+#    activatedDamage:
+#      types:
+        Piercing: 22
+  - type: Item
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/claymore_storage_64x.rsi #Done in 64x64 because it looks way too puny in 32x32
+    shape:
+    - 0,0,1,4
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/claymore.rsi
+    slots:
+    - back
+  - type: DisarmMalus
+
+- type: entity
+  name: falchion
+  parent: [ BaseSword, BaseMajorContraband ]
+  id: FalchionSword
+  description: An ancient one handed blade, commonly used as a sidearm. Expertly deadly in the right hands.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/claymore.rsi
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 3.5
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Slash: 17
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/claymore_storage_64x.rsi #Done in 64x64 because it looks way too puny in 32x32
+    shape:
+    - 0,0,1,4
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/claymore.rsi
+    slots:
+    - back
+  - type: DisarmMalus

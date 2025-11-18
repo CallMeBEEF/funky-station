@@ -1,0 +1,56 @@
+## The big slashy-stabby spear. Increase the range of melee if possible
+- type: entity
+  name: partisan
+  parent: Spear
+  id: PartisanSpear
+  description: A spear with a sword-like head. Perfect for goring and slicing.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/reinforced_spear.rsi
+  - type: MeleeWeapon
+    attackRate: 0.8
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Piercing: 7
+        Slash: 5
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 7
+        Slash: 5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 30
+
+## Javelins should slow, deal stamina damage on hit. Used to chase down anyone slower than the crusaders, or as a shock before getting into melee.
+- type: entity
+  name: javelin
+  parent: Spear
+  id: JavelinSpear
+  description: A thin, pointy stick you throw into people to make them die. Slows people while still inside.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/reinforced_spear.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Piercing: 11
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 7
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 28
+  - type: Ensnaring
+    freeTime: 2.0
+    breakoutTime: 3.5
+    walkSpeed: 0.7
+    sprintSpeed: 0.7
+    staminaDamage: 50
+    canThrowTrigger: true
+    canMoveBreakout: true
